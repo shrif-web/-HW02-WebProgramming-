@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html id="content" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>WebDev</title>
+    <meta name="description" content="hw02-frontend-home">
+
+    <!-- Links -->
+    <link rel="stylesheet" href="http://172.20.10.13/home_css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href='https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="http://172.20.10.13/public/pictures/favicon-32x32.png">
+
+    <script src="http://172.20.10.13/home_js"></script> 
+    <style>
+    body {
+        font-family: "Sahel";
+      }
+    </style>
+
+    <script type="text/javascript">
+        function loadPage(href) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", href, false);
+        xmlhttp.send();
+        return xmlhttp.responseText;
+        }
+    </script>
+
+
+</head>
+
+
+<body>
+
+    <!-- Home design for small screens (less than 600px) -->
+    <div class="small_div">   
+
+    <!-- Fixed Header -->
+    <div class="row" id="home_small_header">
+        <!-- Top navbar -->
+        <div class="col" id="home_big_navbar">
+            <div class="d-flex flex-row" style="width: 100%; height: 100%;">
+                <div class="d-flex justify-content-start mr-auto">
+                    <button class="btn" id="home_small_collapse_button" onclick="showNavbarSmall(1)"><i class="fa fa-bars"></i></button>
+                    <button class="btn" id="home_small_collapse_button_cross" onclick="showNavbarSmall(0)"><i class="fa fa-times"></i></button>
+                </div>
+                <div class="d-flex">
+                    <!-- Logo on navbar -->
+                    <div class="" id="home_small_logo">
+                        <a href="#" style="width: 100%; height: 100%;">
+                            <img src="http://172.20.10.13/public/pictures/blue_logo_fit.png"  class="logo_img_container" loading="lazy">
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left side navbar -->
+    <div id="home_small_side_navbar">
+        <div class="overflow-hidden" style="direction: rtl; padding-right: 50px; padding-top: 20px; color: white;">
+
+            <!-- Team members-->
+            <p class="font-weight-bold text-right" >اعضای تیم</p>
+            <div style="list-style-type:arabic-indic ;direction:RTL; text-align: right">
+                <ul>
+                    <li>امیرحسین رستمی</li>
+                    <li>امید شرفی</li>
+                </ul>
+            </div>
+
+            <!-- Settings -->
+            <p class="font-weight-bold text-right" style="margin-top: 50px;">تنظیمات</p>  
+
+            <div class="d-flex flex-row" style="width: 100%;">
+                <div class="p-2" style="padding: 0% !important; margin-top: 12px;">
+                    <p>حالت شب</p> 
+                </div>
+                <div class="p-2 mr-auto" style="margin-left: 20px;">
+
+                    <!-- my toggle button -->
+                    <div id='nigth_mode_sw1' class="scaled">
+                        <label id='off1' style="display:block;" class="switch">
+                            <input id="ch1" type="checkbox" onchange="nightMode(this);">
+                            <span class="slider round"></span>
+                        </label>
+                        
+                        <label  id='on1' style="display: none;" class="switch">
+                            <input id="ch2" type="checkbox" onchange="nightMode(this);" checked>
+                            <span id='on-span' class="slider round"></span>
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--
+            <div class="custom-control custom-switch" style="float:right">
+                <input type="checkbox" onchange="nightMode(this);" class="custom-control-input" checked="" id="nigth_mode_sw1">
+                <label class="custom-control-label text-right" style="padding-left: 100px;" for="nigth_mode_sw1">حالت شب</label>
+            </div>
+            -->
+
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="row" id="home_small_gallery">
+
+        <!-- Gallery with 1 items -->
+        <div id="home_small_gallery_1" style="width: 100%; height: 100%;">
+            
+            <div class="container-fluid overflow-auto" style="width: 100%; height: 100%; padding:0% ; margin: 0%;">
+
+                <div class="row text-center">
+              
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" style="margin-top: 50px;" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
+                    </a>
+                </div>
+                
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/aob0ukAYfuI/400x300" alt="">
+                    </a>
+                </div>
+
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
+                    </a>
+                </div>
+            
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
+                    </a>
+                </div>
+
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/sesveuG_rNo/400x300" alt="">
+                    </a>
+                </div>
+                
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/AvhMzHwiE_0/400x300" alt="">
+                    </a>
+                </div>
+
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/2gYsZUmockw/400x300" alt="">
+                    </a>
+                </div>
+            
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/EMSDtjVHdQ8/400x300" alt="">
+                    </a>
+                </div>
+
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/8mUEy0ABdNE/400x300" alt="">
+                    </a>
+                </div>
+                
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/G9Rfc1qccH4/400x300" alt="">
+                    </a>
+                </div>
+
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/aJeH0KcFkuc/400x300" alt="">
+                    </a>
+                </div>
+            
+                <div class="col-12">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="gallery_item img-fluid" src="https://source.unsplash.com/p2TQ-3Bh3Oo/400x300" alt="">
+                    </a>
+                </div>
+
+                </div>  
+              
+            </div> 
+
+        </div>
+
+    </div>
+
+    <!-- Small Table -->
+    <div class="container-fluid overflow-auto" id="home_small_table">
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۱</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">کوشا جان</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه صنعتی شریف، ایران</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">۱۳۰۵</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۲</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">مبارزین نتها</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه امیرکبیر، ایران</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">۱۲۷۰</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۳</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">حاجی درچه‌ای</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه علوم پزشکی اصفهان، ایران</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">۱۲۵۰</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۴</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">عدالت و آزادی</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه آزاد قزوین، ایران</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">۱۱۰۵</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۵</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">Beatles</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه ملی شوچنکو، اوکراین</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">۹۴۰</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۶</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">الگل</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه آزاد اسلامی واحد علوم تحقیقات، تهران</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">۹۲۵</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card card">
+            <ul class="home_small_table_list_g list-group list-group-flush">
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">۷</div>
+                    <div class="home_small_table_right">رتبه</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">عمال مناجم البيانات</div>
+                    <div class="home_small_table_right">نام تیم</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left">دانشگاه علم و صنعت اردن، اردن</div>
+                    <div class="home_small_table_right">نام دانشگاه و کشور</div>
+                </li>
+                <li class="home_small_table_list_g_i list-group-item border-0">
+                    <div class="home_small_table_left_im">۸۷۰</div>
+                    <div class="home_small_table_right">امتیاز</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home_small_table_card">
+            <div class="d-flex flex-row" style="width: 100%; height: 100%;">
+                <div class="d-flex justify-content-start mr-auto">
+                    <button type="button" class="btn btn-outline align-middle" id="table_next">بعدی</button>
+                </div>
+                <div class="d-flex">
+                    <button type="button" class="btn btn-outline align-middle" id="table_previous">قبلی</button> 
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Fixed Footer -->
+    <div class="row" id="home_small_footer">
+        <div class="col" id="home_big_navbar">
+            <div class="container-fluid" style="width: 100%; height: 100%; padding:0% ; margin: 0%;">
+
+                <div class="row text-center" style="width: 100%; height: 100%; padding:0% ; margin: 0%;">
+                    <div class="col-3">
+      
+                        <button type="button" id="home_small_signup_button" onclick= "location.href = 'http://172.20.10.13/register'"  >ثبت نام</button>
+                    </div>
+
+                    <div class="col-3">
+                        <button type="button" id="home_small_signin_button" onclick= "location.href = 'http://172.20.10.13/sign-in'" >ورود</button> 
+                    </div>
+
+                    <div class="col-3">
+                        <button type="button" onclick="setGallery(1)" id="home_small_data_button">داده ها</button>
+                    </div>
+
+                    <div class="col-3">
+                        <button type="button" onclick="setGallery(0)" id="home_small_home_button">خانه</button> 
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Home design for big screens (more than 600px) -->
+    <div class="big_div">   
+
+    <!-- Fixed header -->
+    <div class="row" id="home_big_header">
+
+        <!-- Left part navbar -->
+        <div class="col" id="home_big_navbar">
+            <div class="d-flex flex-row" style="width: 100%; height: 100%;">
+                <div class="d-flex justify-content-start mr-auto">
+                    <button type="button" class="btn btn-primary align-middle" id="home_big_signup_button"  onclick= "location.href = 'http://172.20.10.13/register'"  >ثبت نام</button>
+                    <button type="button" class="btn btn-outline align-middle" id="home_big_signin_button"  onclick= "location.href = 'http://172.20.10.13/sign-in'" >ورود</button> 
+                </div>
+                <div class="d-flex">
+                    <button type="button" onclick="setGallery(1)" id="home_big_data_button">داده ها</button>
+                    <button type="button" onclick="setGallery(0)" id="home_big_home_button">خانه</button> 
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo on navbar -->
+        <div class="" id="home_big_logo">
+        <a href="#" style="width: 100%; height: 100%;">
+            <img src="http://172.20.10.13/public/pictures/blue_logo_fit.png"  class="logo_img_container" loading="lazy">
+        </a>
+        </div>
+
+    </div>
+ 
+    <div class="row" id="page_big_content">
+
+        <!-- Gallery -->
+        <div class="col" id="home_big_gallery">
+
+            <!-- Gallery with 3 items -->
+            <div id="home_big_gallery_3" style="width: 100%; height: 100%;">
+                
+                <div class="container-fluid overflow-auto" style="width: 100%; height: 100%; padding:1% ; margin: 0%; padding-bottom: 70px;">
+
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
+                            </a>
+                        </div>
+                        
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/aob0ukAYfuI/400x300" alt="">
+                            </a>
+                        </div>
+
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
+                            </a>
+                        </div>
+
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/sesveuG_rNo/400x300" alt="">
+                            </a>
+                        </div>
+                        
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/AvhMzHwiE_0/400x300" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/2gYsZUmockw/400x300" alt="">
+                            </a>
+                        </div>
+                    
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/EMSDtjVHdQ8/400x300" alt="">
+                            </a>
+                        </div>
+
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/8mUEy0ABdNE/400x300" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/G9Rfc1qccH4/400x300" alt="">
+                            </a>
+                        </div>
+
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/aJeH0KcFkuc/400x300" alt="">
+                            </a>
+                        </div>
+                    
+                        <div class="col-4">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/p2TQ-3Bh3Oo/400x300" alt="">
+                            </a>
+                        </div>
+                    </div>  
+                  
+                </div> 
+
+            </div>
+
+            <!-- Gallery with 4 items -->
+            <div id="home_big_gallery_4" style="width: 100%; height: 100%;">
+
+                <div class="container-fluid overflow-auto" style="width: 100%; height: 100%; padding:1% ; margin: 0%; padding-bottom: 70px;">
+
+                    <div class="row">
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
+                            </a>
+                        </div>
+                        
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/aob0ukAYfuI/400x300" alt="">
+                            </a>
+                        </div>
+
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
+                            </a>
+                        </div>
+                    
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/sesveuG_rNo/400x300" alt="">
+                            </a>
+                        </div>
+                        
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/AvhMzHwiE_0/400x300" alt="">
+                            </a>
+                        </div>
+
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/2gYsZUmockw/400x300" alt="">
+                            </a>
+                        </div>
+                    
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/EMSDtjVHdQ8/400x300" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/8mUEy0ABdNE/400x300" alt="">
+                            </a>
+                        </div>
+                        
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/G9Rfc1qccH4/400x300" alt="">
+                            </a>
+                        </div>
+
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/aJeH0KcFkuc/400x300" alt="">
+                            </a>
+                        </div>
+                    
+                        <div class="col-3">
+                            <a href="#" class="d-block">
+                                <img class="gallery_item img-fluid" src="https://source.unsplash.com/p2TQ-3Bh3Oo/400x300" alt="">
+                            </a>
+                        </div>
+
+                    </div>  
+                  
+                </div> 
+            </div>
+
+        </div>
+
+        <!-- Table of Data-->
+        <div class="col" id="home_big_table">    
+            <div class="container-fluid overflow-auto" style="width: 100%; height: 100%; padding:1% ; margin: 0%; padding-bottom: 70px;">
+                <div class="row">
+                    <div class="col-12">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">امتیاز</th>
+                                <th style="width: 30%;">نام دانشگاه و کشور</th>
+                                <th style="width: 25%;">نام تیم</th>
+                                <th style="width: 20%;">رتبه</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>۱۳۰۵</td>
+                                <td>دانشگاه صنعتی شریف، ایران</td>
+                                <td>کوشا‌ جان</td>
+                                <td>۱</td>
+                            </tr>
+
+                            <tr>
+                                <td>۱۲۷۰</td>
+                                <td>دانشگاه امیرکبیر، ایران</td>
+                                <td>مبارزین نتها</td>
+                                <td>۲</td>
+                            </tr>
+
+                            <tr>
+                                <td>۱۲۵۰</td>
+                                <td>دانشگاه علوم پزشکی اصفهان، اصفهان</td>
+                                <td>حاجی درچه‌ای</td>
+                                <td>۳</td>
+                            </tr>
+
+                            <tr>
+                                <td>۱۱۰۵</td>
+                                <td>دانشگاه آزاد قزوین، ایران</td>
+                                <td>عدالت و آزادی</td>
+                                <td>۴</td>
+                            </tr>
+
+                            <tr>
+                                <td>۹۴۰</td>
+                                <td>دانشگاه ملی شوچنکو، اوکراین</td>
+                                <td>Beatles</td>
+                                <td>۵</td>
+                            </tr>
+
+                            <tr>
+                                <td>۹۲۵</td>
+                                <td>دانشگاه آزاد اسلامی واحد علوم تحقیقات، تهران</td>
+                                <td>الگل</td>
+                                <td>۶</td>
+                            </tr>
+
+                            <tr>
+                                <td>۸۷۰</td>
+                                <td>دانشگاه علم و صنعت اردن، اردن</td>
+                                <td>عمال مناجم البيانات</td>
+                                <td>۷</td>
+                            </tr>
+                        </tbody>
+                    </table>  
+                    </div>
+
+                    <div class="col-12">
+                        <div class="d-flex flex-row" style="width: 100%; height: 100%;">
+                            <div class="d-flex justify-content-start mr-auto">
+                                <button type="button" class="btn btn-outline align-middle" id="table_next">بعدی</button>
+                            </div>
+                            <div class="d-flex">
+                                <button type="button" class="btn btn-outline align-middle" id="table_previous">قبلی</button> 
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side navbar -->
+        <div id="home_big_side_navbar">
+            <div class="overflow-hidden" style="direction: rtl; padding-right: 50px; padding-top: 20px; color: white;">
+
+                <!-- Team members-->
+                <p class="font-weight-bold text-right" >اعضای تیم</p>
+                <div style="list-style-type:arabic-indic ;direction:RTL; text-align: right">
+                    <ul>
+                        <li>امیرحسین رستمی</li>
+                        <li>امید شرفی</li>
+                    </ul>
+                </div>
+
+                <!-- Settings -->
+                <p class="font-weight-bold text-right" style="margin-top: 50px;">تنظیمات</p>  
+
+                <div class="d-flex flex-row" style="width: 100%;">
+                    <div class="p-2" style="padding: 0% !important; margin-top: 12px;">
+                        <p>حالت شب</p> 
+                    </div>
+                    <div class="p-2 mr-auto" style="margin-left: 20px;">
+
+                        <!-- my toggle button -->
+                        <div id='nigth_mode_sw2' class="scaled">
+                            <label id='off2' style="display:block;" class="switch">
+                                <input id="ch3" type="checkbox" onchange="nightMode(this);">
+                                <span class="slider round"></span>
+                            </label>
+                            
+                            <label  id='on2' style="display: none;" class="switch">
+                                <input id='ch4' type="checkbox" onchange="nightMode(this);" checked>
+                                <span id='on-span' class="slider round"></span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    
+    <!-- jQuery, Popper.js, and Bootstrap JS -->
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+   
+</body>
+</html>

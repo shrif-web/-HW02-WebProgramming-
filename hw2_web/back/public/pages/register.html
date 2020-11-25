@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html id="content" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>WebDev</title>
+    <meta name="description" content="hw02-frontend-home">
+
+    <!-- Links -->
+    
+    <!--serve from main server-->
+    <link rel="stylesheet" href="http://172.20.10.13/register_css">
+   <!--serve from memory server-->
+    <link rel="icon" href="http://172.20.10.13/public/pictures/favicon-32x32.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href='https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+    <style>
+    body {
+        font-family: "Sahel";
+      }
+    </style>
+
+    <!--Top Navigation Onclicks-->
+    <script type="text/javascript">
+        function loadPage(href) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", href, false);
+        xmlhttp.send();
+        return xmlhttp.responseText;
+        }
+        </script>
+
+    <script type="application/javascript">
+
+        function toggle(item) {
+        var register = document.getElementById('register');
+        var signIn = document.getElementById('sign-in');
+        var repeat = document.getElementById('pass-repeat');
+        var submitText = document.getElementById('btn');
+        var ruleDiv = document.getElementById('rule');
+        var submitDiv = document.getElementById('submit');
+        var submitText = document.getElementById('btn');
+
+        if(item == 0){
+            register.style.color = '#73A1C2';
+            register.style.backgroundColor = '#D1E4F3';
+            signIn.style.color = '#186AA5';
+            signIn.style.backgroundColor = '#ffffff';
+            repeat.style.display = "none"
+            ruleDiv.style.display = "none"
+            submitDiv.style.marginTop = "20px";
+            submitText.value = "ورود"
+
+        } else {
+            signIn.style.color = '#73A1C2';
+            signIn.style.backgroundColor = '#D1E4F3';
+            register.style.color = '#186AA5';
+            register.style.backgroundColor = '#ffffff';
+            repeat.style.display = "block"
+            ruleDiv.style.display = "block"
+            submitDiv.style.marginTop = "0px";
+            submitText.value = "ثبت نام"
+        }
+        }
+
+        function signup(button) {
+            var email = document.getElementById('email');
+            var pass = document.getElementById('pass');
+            var passRepeat = document.getElementById('pass-repeat');
+            var errorText = document.getElementById('error-text');
+            var errorPart = document.getElementById('error-part');
+            var submitDiv = document.getElementById('submit');
+            var checkRule = document.getElementById('check-rule');
+
+            if(button.value == "ثبت نام") {
+                if(email.value == "") {
+                    errorText.innerHTML = ".ایمیل خود را وارد کنید";   
+                } else if (pass.value == "") {
+                    errorText.innerHTML = ".رمز عبور انتخاب کنید";   
+                } else if (pass.value != passRepeat.value) {
+                    errorText.innerHTML = "!عدم همخوانی تکرار رمز عبور";   
+                } else if(checkRule.checked == false) {
+                    errorText.innerHTML = ".قوانین را تایید بفرمایید";   
+                } else {
+                    alert(".ثبت نام با موفقیت انجام شد"); 
+                    errorPart.style.display = "none";
+                    submitDiv.style.marginBottom = "20px";
+                    return;  
+                }
+
+                submitDiv.style.marginBottom = "0px";
+                errorPart.style.display = "block";
+                errorPart.style.animation = "fadeIn 0.7s infinite";
+                errorPart.style.animationIterationCount = "1";
+                errorPart.style.animationFillMode = "forwards";
+
+                return;
+            }
+
+            if(email.value == "") {
+                    errorText.innerHTML = ".ایمیل خود را وارد کنید";   
+                } else if (pass.value == "") {
+                    errorText.innerHTML = ".رمز عبورخود را وارد کنید";   
+                } else {
+                    alert ("!وارد شدید");
+                    errorPart.style.display = "none";
+                    submitDiv.style.marginBottom = "20px";
+                    return;
+                }
+
+            submitDiv.style.marginBottom = "0px";
+            errorPart.style.display = "block";
+            errorPart.style.animation = "fadeIn 0.7s infinite";
+            errorPart.style.animationIterationCount = "1";
+            errorPart.style.animationFillMode = "forwards";
+
+            return;
+
+        }
+
+        function removeErrorBox() {
+            var errorPart = document.getElementById('error-part');
+            var submitDiv = document.getElementById('submit');
+
+            errorPart.style.display = "none"
+            submitDiv.style.marginBottom = "20px";
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <!-- Fixed Header -->
+    <div id="signinup_header">
+        <div class="d-flex flex-row" style="width: 100%; height: 100%;">
+            <div class="d-flex justify-content-start mr-auto">
+                <a href="http://172.20.10.13" id="back_home_link" onclick= "document.getElementById('content').innerHTML = loadPage('http://172.20.10.13/home');" >&lt بازگشت به خانه</a>
+            </div>
+            <div class="d-flex">
+                <!-- Logo on navbar -->
+                <div class="" id="signinup_small_logo">
+                    <a href="#" style="width: 100%; height: 100%;">
+                        <img src="http://172.20.10.13/public/pictures/blue_logo_fit.png"  class="logo_img_container" loading="lazy">
+                    </a> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SignInUp design for small screens (less than 600px) -->
+    <div class="d-flex justify-content-center responsive_div">
+
+        <div class=" big_div">
+            <div class="container" style="width: 100%; height: 100%; margin: 0%; padding: 0%;">
+                <img id="left_side_img" style="width: 100%; height: 100%;" src="http://172.20.10.13/public/pictures/signup-lowQ-light.jpg" alt="">
+                <div class="centered">برای آغاز مسیر خود در سایت ما ثبت نام کنید</div>
+            </div>
+        </div>
+
+        <div class=" small_div">  
+        <div class="row" id="signinup_small">
+            <div class="column" id="login-box">
+                <!--Top navigation Bar(Register Vs SignUp-->
+                <div id = "top-nav-box" class="d-flex" >
+
+                    <div id= "sign-in" class="p-2 flex-fill" style="width: 50%;"
+                    onclick="toggle(0)">ورود</div>
+
+                    <div id = "register" class="p-2 flex-fill"  style="width: 50%;"       
+                    onclick="toggle(1)">ثبت نام</div>
+
+                </div>
+
+                <!--Inner Box-->
+                <div id="login-inner-box" >
+
+                    <input id="email" type="text"  placeholder="ایمیل"/>
+                    <input id="pass" type="password" placeholder="رمز عبور"/>
+                    <input id="pass-repeat" type="password" placeholder="تکرار رمز عبور" />
+
+                    <!--Accept rules-->
+                    <div id="rule" >
+                        <input id="check-rule" type="checkbox" class="square">
+                    <div style="color: #78A4C4;" class="warning">قوانین و شرایط را قبول می کنم</div>
+                </div>
+
+                <!--Submit Button-->
+                <div id="submit" >
+                    <input id="btn" type="submit" name="signup_submit" onclick="signup(this)" value="ثبت نام"/>
+                </div>
+
+                <!--Error Part-->
+                <div id="error-part" >
+
+                    <div id = "right-rect" class="p-2 flex-fill"></div>
+                    <div id = "error-text" class="p-2 flex-fill">متن خطا</div>
+
+                    <div class="p-2 flex-fill" style="height:100%;background-color:#E8EFF7;"> 
+                        <div id = "error-circle" onclick="removeErrorBox();">&#10005;</div>
+                    </div>
+
+                    </div>
+
+                </div>
+          
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('top-nav-box').addEventListener('click', function (event){
+            event.stopPropagation();
+        });
+        document.getElementById('sign-in').addEventListener('click', function (event){
+            event.stopPropagation();
+        });
+        document.getElementById('register').addEventListener('click', function (event){
+            event.stopPropagation();
+        });
+    </script>
+
+    <!-- jQuery, Popper.js, and Bootstrap JS -->
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+   
+</body>
+</html>
