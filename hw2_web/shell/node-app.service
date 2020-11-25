@@ -7,8 +7,6 @@ Restart=always
 RestartSec=2s
 #Environment=PORT=80
 
-# for HW1_WEB  ExecStart=/usr/bin/node /home/AHReccese/hw1_web/back/node/index.js
-
 # for HW2_WEB
 ExecStart=/usr/bin/node /home/AHReccese/hw2_web/back/index.js
 
